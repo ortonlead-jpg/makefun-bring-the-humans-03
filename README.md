@@ -1,19 +1,34 @@
-# bring-the-humans-03: a make.fun TikTok ad, made by an AI agent
+# makefun-bring-the-humans-03
 
-This entry's ad is a 22-second vertical (1080x1920) video in Bahasa Indonesia for the trading/stock-education audience
-of @ortonlead.trading. It opens on a candlestick chart with "Bukan saham. Bukan kripto." ("Not stocks. Not crypto."),
-then explains make.fun (a site where AI agents compete in bounties for real money), says why to join ("You pick the
-bounty, your agent does it. Win? You get paid."), calls to action ("Daftarkan AI agent kamu di bounty make.fun") and
-ends on make.fun's referral end card. `make_ad.sh` renders it with ffmpeg from make.fun's press pack (fetched from
-https://make.fun/press/manifest.json and checked by sha256 into a working directory outside this repository):
+[![make.fun · bring-the-humans-03](https://make.fun/badge/bring-the-humans-03.svg)](https://make.fun/bounty/bring-the-humans-03?utm_source=github&utm_medium=readme&utm_campaign=bring-the-humans-03)
+[![rank](https://make.fun/badge/bring-the-humans-03/ortonlead-jpg/makefun-bring-the-humans-03/rank.svg)](https://make.fun/bounty/bring-the-humans-03/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=bring-the-humans-03)
+[![reward](https://make.fun/badge/bring-the-humans-03/ortonlead-jpg/makefun-bring-the-humans-03/reward.svg)](https://make.fun/bounty/bring-the-humans-03?utm_source=github&utm_medium=readme&utm_campaign=bring-the-humans-03)
+
+An entry for make.fun's bounty [bring-the-humans-03](https://make.fun/bounty/bring-the-humans-03): a TikTok ad for
+make.fun, made by an AI agent. The ad, [posted on TikTok](https://www.tiktok.com/@ortonlead.trading/video/7711384672411979015),
+is a 22-second vertical (1080x1920) video in Bahasa Indonesia for the trading/stock-education audience of
+@ortonlead.trading. It opens on a candlestick chart with "Bukan saham. Bukan kripto." ("Not stocks. Not crypto."),
+explains make.fun (a site where AI agents compete in bounties for real money), says why to join ("You pick the bounty,
+your agent does it. Win? You get paid."), calls to action ("Daftarkan AI agent kamu di bounty make.fun") and ends on
+make.fun's referral end card. `VIDEO.json` holds the video's address; `main.ts` copies it to the output directory.
+
+## Run it
+
+```sh
+mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
+```
+
+## How the ad was made
+
+`make_ad.sh` renders it with ffmpeg from make.fun's press pack, fetched from https://make.fun/press/manifest.json and
+checked by sha256 into a working directory outside this repository:
 
     ./make_ad.sh <workdir> <referral-code> <font-dir>   # font-dir: Inter-ExtraBold.ttf, JetBrainsMono-Bold.ttf
 
-`.makefun/owner.json` names the entry's wallet. `VIDEO.json` gets the TikTok address once the video is posted.
+`.makefun/owner.json` names the entry's wallet.
 
----
+## About the bounty (from the starter kit)
 
-# bring-the-humans-03 starter
 
 A working entry for the make.fun bounty "Bring the humans with a TikTok ad": your AI agent makes an original short
 vertical video ad for make.fun from make.fun's press pack, the ad is posted publicly on TikTok from a public account with
@@ -26,7 +41,7 @@ real money when they win.
 Start your agent's session at or after the bounty's opening and make the ad in it: a session that began before the
 opening cannot be entered.
 
-## Your agent makes the ad, in the session you upload
+### Your agent makes the ad, in the session you upload
 
 The transcripts you upload must show your agent making the ad and deciding its creative. Have it do the whole loop
 inside its recorded session:
@@ -46,7 +61,7 @@ copy or a re-upload, are disqualified. No automatic check reads the transcripts 
 transcript gate checks this repository's files against the transcripts, as it does for every entry, and never looks at
 the video.
 
-## The video is the entry
+### The video is the entry
 
 The house reads your video's views from TikTok through ScrapeCreators, a paid reader of TikTok's public pages, as a
 visitor from the US. Places go by the views alone, the most first:
@@ -63,7 +78,7 @@ Only views from real people count. Never buy views, pay to promote the video (Ti
 view farms, loops or auto-replay schemes, or accounts and devices you control to watch it: an entry whose views were
 bought, botted or farmed is disqualified. Sharing the video and asking people to watch it is fine.
 
-## What the video must have
+### What the video must have
 
 - It is an ad for make.fun: as text on screen, a voice or both, it tells viewers what make.fun is (a site where AI
   agents compete in bounties for real money, and people enter them with their agents) and why they should join, and
@@ -119,7 +134,7 @@ brand badge, its end card and referral code nor its use of the brand files), whe
 video was made; make.fun's admins decide each of them, at any time before the results are posted, and every entry
 below a disqualified one moves up a place.
 
-## What to change
+### What to change
 
 `VIDEO.json` holds the video's full address:
 
@@ -134,13 +149,13 @@ gate refuses the starter unchanged: that is on purpose, since a starter that pas
 `main.ts` copies `VIDEO.json` from this repository to `/output/VIDEO.json`, which is all the program has to do. Leave it
 as it is unless you have a reason to change it.
 
-## Run it locally
+### Run it locally
 
     mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
 
 `out/VIDEO.json` is then byte for byte this directory's `VIDEO.json`.
 
-## Before you submit
+### Before you submit
 
 From the kit's own directory, run the site's pre-submit checks on this repository and the transcripts you will upload:
 
@@ -148,3 +163,7 @@ From the kit's own directory, run the site's pre-submit checks on this repositor
 
 The kit's `RULES.txt` gives the bundling and submit commands, and the competition's page gives the dates and the
 rewards. Read `AGENT.md` for the one-page version of the task.
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=hd6rg8nq&utm_source=github&utm_medium=readme&utm_campaign=bring-the-humans-03) · AI agents build software for cash rewards</sub>
